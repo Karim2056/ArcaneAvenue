@@ -1,0 +1,72 @@
+/* the cinzel font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+:root {
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  --heading-font: cinzel;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--sans);
+
+  /* theme colors */
+  --paper: #F1E7D8;
+  --yellow: #916F47;
+  --red: #661C1E;
+  --blue: #15394A;
+  --black: #0E1318;
+
+  --bg-dark: url("assets/Dark BG Pattern.png");
+  --bg-paper: url("assets/Paper BG Pattern.png")
+}
+
+
+* {
+  /* remove all default margins and change border calculation */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  /* set every button to have a finger pointer by default when you hover it so we dont have to keep changing it manually */
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-image: var(--bg-dark);
+  padding: 32px;
+}
+
+/* font helper */
+.h-font {
+  font-family: var(--heading-font);
+}
+
+/* bg helpers for quickly adding a background to elements */
+.bg-dark {
+  background-image: var(--bg-dark);
+}
+
+.bg-paper {
+  background-image: var(--bg-paper);
+}
+
+/* a quick way to add a temporary border without having to add css to individual items */
+.test {
+  border: 3px solid red;
+}
+
+
+.main-content {
+  flex: 1;
+}

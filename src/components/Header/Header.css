@@ -1,0 +1,120 @@
+.main-header{
+    
+}
+
+.header-top{
+    display: flex;
+    gap: 4px;
+    padding: 16px;
+    border-radius: 16px;
+    corner-shape: scoop;
+}
+.header-left{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.header-star{
+    width: 100%;
+    max-width: 90px;
+    padding-right: 8px;
+}
+.header-deco{
+    font-family: var(--heading-font);
+    border-left: 1px solid var(--yellow);
+    font-weight: 600;
+    padding-left: 16px;
+}
+@media only screen and (max-width: 950px){
+    .header-deco{
+        display: none;
+    }
+    .header-star{
+        padding: 0;
+    }
+}
+.header-middle{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 100%;
+    max-width: 300px;
+}
+.header-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+.header-actions{
+    display: flex;
+    gap: 16px;
+}
+.header-btn{
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--heading-font);
+    background: none;
+    border: none;
+    font-size: 1rem;
+}
+.search-form{
+    display: flex;
+}
+.simple-input{
+    border: 2px solid var(--yellow);
+    background: none;
+    padding: 8px 16px;
+}
+.search-btn{
+    border: 2px solid var(--yellow);
+    border-left: none;
+    background-color: var(--blue);
+    color: var(--paper);
+    font-weight: 600;
+    padding: 4px 16px;
+}
+.category-nav{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    flex-wrap: wrap;
+
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    border-bottom: 1px solid var(--yellow);
+    border-top: 1px solid var(--yellow);
+}
+.cat-link{
+    color: var(--paper);
+    font-family:var(--heading-font);
+    font-weight: 600;
+    text-decoration: none;
+}
+.cat-link:hover{
+    filter: brightness(1.5);
+}
+
+@media only screen and (max-width: 700px){
+    .header-left{
+        display: none;
+    }
+    .header-top{
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+    }
+}
+@media only screen and (max-width: 550px){
+    .header-top{
+        flex-direction: column;
+        gap: 16px;
+    }
+}

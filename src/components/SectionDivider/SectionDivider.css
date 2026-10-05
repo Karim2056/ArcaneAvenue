@@ -1,0 +1,43 @@
+.section-divider {
+    display: flex;
+    gap: 20px;
+}
+
+.divider-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.div-line {
+    height: 2px;
+    width: 100%;
+    background-color: var(--yellow);
+}
+
+.div-line.short {
+    max-width: 16px;
+}
+
+.div-link {
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 8px 16px;
+    text-wrap: nowrap;
+    margin: 0px 16px;
+    text-decoration: none;
+    font-family: var(--heading-font);
+}
+
+.divider-col-middle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--heading-font);
+    text-align: center;
+
+    
+    > img {
+        width: 40px;
+    }
+}

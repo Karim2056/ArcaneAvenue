@@ -43,3 +43,24 @@
     background: var(--red);
     border: 2px solid var(--yellow);
 }
+
+.form-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+}
+
+.form-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: var(--red);
+    font-weight: 800;
+}
+
+.form-toggle-btn:hover {
+    filter: brightness(1.5);
+}

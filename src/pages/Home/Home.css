@@ -28,3 +28,18 @@
     background: var(--red);
     border: 2px solid var(--yellow);
 }
+
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+    .product-cards {
+        display: grid;
+        grid-template-columns: auto auto;
+        
+    }
+}

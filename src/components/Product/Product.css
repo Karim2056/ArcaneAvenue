@@ -1,0 +1,31 @@
+.card {
+    border: 1px solid var(--yellow);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+    width: 100%;
+    max-width: 200px;
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-size: small;
+    font-weight: 600;
+
+    color: black;
+
+    > p {
+        padding-bottom: 10px;
+        padding-top: 5px;
+        font-size: clamp(0.5625rem, 0.4042rem + 0.6667vw, 0.9375rem)
+    }
+
+    > h1 {
+        margin-top: auto;
+
+    }
+}
+
+.product-image {
+    width: 100%;
+    max-width: 200px;
+}

@@ -24,7 +24,7 @@ export default function Header() {
                 <div className="header-right">
 
                     <nav className="header-actions">
-                        <NavLink to="account" className="header-btn">ACCOUNT</NavLink>
+                        <NavLink to="auth" className="header-btn">ACCOUNT</NavLink>
                         <NavLink to="wishlist" className="header-btn">WISHILIST</NavLink>
                         <button className="header-btn">WISHILIST</button>
                     </nav>

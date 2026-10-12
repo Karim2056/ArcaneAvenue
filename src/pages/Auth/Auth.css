@@ -119,3 +119,34 @@
 .auth-btn:hover {
     filter: brightness(1.5);
 }
+
+.account-type-selector {
+    display: flex;
+    gap: 16px;
+    border: 2px solid var(--yellow);
+    padding: 8px;
+    justify-content: center;
+
+    margin-top: 16px;
+}
+
+.account-radio {
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--yellow);
+    padding: 8px;
+
+    width: 100%;
+    color: var(--blue);
+
+    font-family: var(--heading-font);
+
+    > input {
+        display: none;
+    }
+}
+
+.account-radio:has( input[type="radio"]:checked ){
+    background-color: var(--blue);
+    color: var(--paper);
+}

@@ -4,6 +4,7 @@ import { useState } from "react"
 import AuthBanner from "../../assets/Home Banner.png"
 import SectionDivider from "../../components/SectionDivider/SectionDivider"
 import Star from "../../assets/Star.png"
+import axios from "axios"
 
 export default function Auth() {
 
@@ -35,16 +36,41 @@ function RegisterForm({ toggleForm }) {
 
     const [errorMsg, setErrorMsg] = useState("")
 
+    function handleRegisterResponse(response) {
+        console.log(response.data)
+    }
+
+    function handleRegisterError(error) {
+        setErrorMsg(error?.response?.data?.detail || "An error occured")
+    }
+
 
     function handleSubmit(e) {
         e.preventDefault();
 
         setErrorMsg("");
 
-        if(password != confirmPass) {
+        if (password != confirmPass) {
             setErrorMsg("Your passwords do not match");
             return;
         }
+
+
+        let dataToSend = {
+            "email": email,
+            "password": password,
+            "account_type": "buyer"
+        }
+
+        const endpoint_url = "http://127.0.0.1:8001/auth/register";
+
+        axios.post(endpoint_url, dataToSend)
+            .then(
+                handleRegisterResponse
+            )
+            .catch(
+                handleRegisterError
+            )
 
         alert("form submitted")
     }
@@ -84,7 +110,7 @@ function RegisterForm({ toggleForm }) {
             </div>
 
             <button type="submit" className="auth-btn">Register</button>
-            { errorMsg ? <p className="form-err">{errorMsg}</p> : null}
+            {errorMsg ? <p className="form-err">{errorMsg}</p> : null}
             <div className="form-actions">
                 <p>Already have an account?</p>
                 <button type="button" onClick={toggleForm} className="form-toggle-btn">Login</button>
@@ -97,11 +123,26 @@ function LoginForm({ toggleForm }) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMsg, setErrorMsg] = useState("")
+
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        alert("form submitted")
+        let endpoint_url = "http://127.0.0.1:8001/auth/login"
+
+        const dataToSend = {
+            "email": email,
+            "password": password
+        }
+
+        axios.post(endpoint_url, dataToSend)
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                setErrorMsg(error?.response?.data?.detail || "An error occured")
+            });
     }
 
     return (
@@ -123,8 +164,8 @@ function LoginForm({ toggleForm }) {
             </label>
 
 
-            <button type="submit" className="auth-btn">Login</button>
-
+            <button type="submit" className="auth-btn" >Login</button>
+            {errorMsg ? <p className="form-err">{errorMsg}</p> : null}
             <div className="form-actions">
                 <p>Don't have an account?</p>
                 <button type="button" onClick={toggleForm} className="form-toggle-btn">Login</button>

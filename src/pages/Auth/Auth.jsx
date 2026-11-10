@@ -32,6 +32,7 @@ function RegisterForm({ toggleForm }) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [accountType, setAccountType] = useState("buyer")
     const [confirmPass, setConfirmPass] = useState("");
 
     const [errorMsg, setErrorMsg] = useState("")
@@ -59,7 +60,7 @@ function RegisterForm({ toggleForm }) {
         let dataToSend = {
             "email": email,
             "password": password,
-            "account_type": "buyer"
+            "account_type": accountType
         }
 
         const endpoint_url = "http://127.0.0.1:8001/auth/register";
@@ -101,11 +102,21 @@ function RegisterForm({ toggleForm }) {
             <div className="account-type-selector">
                 <label className="account-radio">
                     Buyer
-                    <input type="radio" name="type" />
+                    <input 
+                    type="radio" 
+                    name="type" 
+                    checked={accountType === "buyer"}
+                    value="buyer"
+                    onChange={(e) => setAccountType(e.target.value)} />
                 </label>
                 <label className="account-radio">
                     Seller
-                    <input type="radio" name="type" />
+                    <input
+                    type="radio" 
+                    name="type" 
+                    checked={accountType === "seller"}
+                    value="seller"
+                    onChange={(e) => setAccountType(e.target.value)} />
                 </label>
             </div>
 
